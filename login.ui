@@ -1,162 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>LoginWindow</class>
+ <widget class="QWidget" name="LoginWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>600</height>
+    <height>500</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Giriş</string>
+   <string>Sensör Kontrol Sistemi - Giriş</string>
   </property>
   <property name="styleSheet">
    <string notr="true">QWidget {
-    background: qlineargradient(
-        x1: 0, y1: 0,
-        x2: 1, y2: 1,
-        stop: 0 #2C3E50,
-        stop: 1 #34495E
-    );
-    color: white;
-    font-family: 'Segoe UI', sans-serif;
+	background-color: #34495E;
 }
-
 QLabel {
-    color: white;
-    font-size: 16px;
-    background: transparent;
+	color: white;
+	font-size: 24px;
+	font-weight: bold;
 }
-
 QLineEdit {
-    background: rgba(44, 62, 80, 0.7);
-    border: 2px solid transparent;
-    border-radius: 10px;
-    padding: 10px;
-    color: white;
-    font-size: 14px;
-    selection-background-color: #3498DB;
+	padding: 12px;
+	border: 2px solid #3498DB;
+	border-radius: 6px;
+	background: #2C3E50;
+	color: white;
+	font-size: 14px;
 }
-
-QLineEdit:hover {
-    border-color: #3498DB;
-}
-
 QLineEdit:focus {
-    border-color: #2980B9;
-    background: rgba(44, 62, 80, 0.9);
+	border-color: #2980B9;
 }
-
 QPushButton {
-    background: #3498DB;
-    border: none;
-    border-radius: 10px;
-    padding: 12px;
-    color: white;
-    font-weight: bold;
-    font-size: 14px;
+	padding: 12px;
+	background: #3498DB;
+	border: none;
+	border-radius: 6px;
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
 }
-
 QPushButton:hover {
-    background: #2980B9;
-    margin-top: -2px;
-    margin-bottom: 2px;
+	background: #2980B9;
 }
-
-QPushButton:pressed {
-    background: #2574A9;
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-
 QCheckBox {
-    color: white;
-    font-size: 14px;
-    spacing: 8px;
-}
-
-QCheckBox::indicator {
-    width: 20px;
-    height: 20px;
-    border-radius: 5px;
-    border: 2px solid #3498DB;
-    background: rgba(44, 62, 80, 0.7);
-}
-
-QCheckBox::indicator:hover {
-    border-color: #2980B9;
-}
-
-QCheckBox::indicator:checked {
-    background: #3498DB;
-    color: white;
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 14px;
-    content: "✓";
-}
-
-QCheckBox::indicator:checked:hover {
-    background: #2980B9;
-}
-</string>
+	color: white;
+	font-size: 14px;
+}</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
     <number>20</number>
    </property>
    <property name="leftMargin">
-    <number>40</number>
+    <number>50</number>
    </property>
    <property name="topMargin">
-    <number>40</number>
+    <number>50</number>
    </property>
    <property name="rightMargin">
-    <number>40</number>
+    <number>50</number>
    </property>
    <property name="bottomMargin">
-    <number>40</number>
+    <number>50</number>
    </property>
    <item>
-    <widget class="QLabel" name="logo">
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>100</height>
-      </size>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QLabel {
-    font-size: 48px;
-    font-weight: bold;
-    color: white;
-    background: rgba(44, 62, 80, 0.7);
-    border-radius: 15px;
-    padding: 20px;
-}</string>
-     </property>
-     <property name="text">
-      <string>🛰️</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item>
     <widget class="QLabel" name="title">
-     <property name="styleSheet">
-      <string notr="true">QLabel {
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    background: transparent;
-}</string>
-     </property>
      <property name="text">
-      <string>Yer İstasyonu</string>
+      <string>Sensör Kontrol Sistemi</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -178,12 +91,6 @@ QCheckBox::indicator:checked:hover {
    </item>
    <item>
     <widget class="QLineEdit" name="username">
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>45</height>
-      </size>
-     </property>
      <property name="placeholderText">
       <string>Kullanıcı Adı</string>
      </property>
@@ -191,12 +98,6 @@ QCheckBox::indicator:checked:hover {
    </item>
    <item>
     <widget class="QLineEdit" name="password">
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>45</height>
-      </size>
-     </property>
      <property name="echoMode">
       <enum>QLineEdit::Password</enum>
      </property>
@@ -206,7 +107,7 @@ QCheckBox::indicator:checked:hover {
     </widget>
    </item>
    <item>
-    <widget class="QCheckBox" name="remember_me">
+    <widget class="QCheckBox" name="remember">
      <property name="text">
       <string>Beni Hatırla</string>
      </property>
@@ -214,14 +115,15 @@ QCheckBox::indicator:checked:hover {
    </item>
    <item>
     <widget class="QPushButton" name="login_btn">
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>45</height>
-      </size>
-     </property>
      <property name="text">
       <string>Giriş Yap</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="register_btn">
+     <property name="text">
+      <string>Kayıt Ol</string>
      </property>
     </widget>
    </item>

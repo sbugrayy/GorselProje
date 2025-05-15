@@ -11,141 +11,68 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Yer İstasyonu</string>
+   <string>Sensör Kontrol Sistemi</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QMainWindow {
-    background: qlineargradient(
-        x1: 0, y1: 0,
-        x2: 1, y2: 1,
-        stop: 0 #2C3E50,
-        stop: 1 #34495E
-    );
+   <string notr="true">QMainWindow, QWidget {
+	background-color: #34495E;
 }
-
-QWidget {
-    color: white;
-    font-family: 'Segoe UI', sans-serif;
-}
-
 QListWidget {
-    background: rgba(44, 62, 80, 0.7);
-    border: none;
-    border-radius: 15px;
-    padding: 10px;
-    outline: none;
+	background-color: #2C3E50;
+	border: none;
+	color: white;
+	font-size: 14px;
 }
-
 QListWidget::item {
-    background: rgba(52, 73, 94, 0.7);
-    border: 2px solid transparent;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 5px;
-    color: white;
-    font-size: 16px;
+	padding: 10px;
+	border-bottom: 1px solid #34495E;
 }
-
-QListWidget::item:hover {
-    background: rgba(41, 128, 185, 0.7);
-    border-color: #3498DB;
-}
-
 QListWidget::item:selected {
-    background: #2980B9;
-    border-color: #3498DB;
+	background-color: #3498DB;
 }
-
-QPushButton {
-    background: #E74C3C;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    color: white;
-    font-weight: bold;
-    font-size: 14px;
+QListWidget::item:hover {
+	background-color: #34495E;
 }
-
-QPushButton:hover {
-    background: #C0392B;
-    margin-top: -2px;
-    margin-bottom: 2px;
+QPushButton#logout_btn {
+	background-color: #E74C3C;
+	color: white;
+	border: none;
+	padding: 10px;
+	text-align: left;
+	font-size: 14px;
 }
-
-QPushButton:pressed {
-    background: #A93226;
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-
-QLabel {
-    color: white;
-    font-size: 16px;
-}
-
-QStackedWidget {
-    background: transparent;
-}
-
-/* Özel scrollbar stilleri */
-QScrollBar:vertical {
-    border: none;
-    background: rgba(44, 62, 80, 0.3);
-    width: 10px;
-    margin: 0px;
-}
-
-QScrollBar::handle:vertical {
-    background: #3498DB;
-    border-radius: 5px;
-    min-height: 20px;
-}
-
-QScrollBar::handle:vertical:hover {
-    background: #2980B9;
-}
-
-QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical,
-QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
-    border: none;
-    background: none;
-    height: 0px;
+QPushButton#logout_btn:hover {
+	background-color: #C0392B;
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
     <property name="spacing">
-     <number>20</number>
+     <number>0</number>
     </property>
     <property name="leftMargin">
-     <number>20</number>
+     <number>0</number>
     </property>
     <property name="topMargin">
-     <number>20</number>
+     <number>0</number>
     </property>
     <property name="rightMargin">
-     <number>20</number>
+     <number>0</number>
     </property>
     <property name="bottomMargin">
-     <number>20</number>
+     <number>0</number>
     </property>
     <item>
-     <widget class="QWidget" name="sidebar" native="true">
-      <property name="minimumSize">
-       <size>
-        <width>250</width>
-        <height>0</height>
-       </size>
-      </property>
+     <widget class="QWidget" name="left_container" native="true">
       <property name="maximumSize">
        <size>
-        <width>250</width>
+        <width>200</width>
         <height>16777215</height>
        </size>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <property name="spacing">
-        <number>20</number>
+        <number>0</number>
        </property>
        <property name="leftMargin">
         <number>0</number>
@@ -160,55 +87,10 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
         <number>0</number>
        </property>
        <item>
-        <widget class="QLabel" name="logo">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>100</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QLabel {
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    background: rgba(44, 62, 80, 0.7);
-    border-radius: 15px;
-    padding: 20px;
-}</string>
-         </property>
-         <property name="text">
-          <string>🛰️ Yer İstasyonu</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QListWidget" name="side_menu">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>16777215</height>
-          </size>
-         </property>
-        </widget>
+        <widget class="QListWidget" name="side_menu"/>
        </item>
        <item>
         <widget class="QPushButton" name="logout_btn">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>50</height>
-          </size>
-         </property>
          <property name="text">
           <string>🚪 Çıkış Yap</string>
          </property>
@@ -218,11 +100,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
      </widget>
     </item>
     <item>
-     <widget class="QStackedWidget" name="content_stack">
-      <property name="currentIndex">
-       <number>-1</number>
-      </property>
-     </widget>
+     <widget class="QStackedWidget" name="content_stack"/>
     </item>
    </layout>
   </widget>
